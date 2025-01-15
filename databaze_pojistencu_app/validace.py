@@ -5,7 +5,7 @@ class Kontrolor:
 
     @classmethod
     def zvaliduj_jmeno_nebo_prijmeni(self, jmeno):
-        if jmeno.isalpha() and len(jmeno) > 1 and len(jmeno) < 15:
+        if jmeno.isalpha() and len(jmeno) > 1 or len(jmeno) < 15:
             return True
         return False
 
