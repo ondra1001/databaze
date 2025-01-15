@@ -13,20 +13,11 @@ class Kontrolor:
     def zvaliduj_datum_narození(self, datum):
         vzorec = r'^(0[1-9]|[12][0-9]|3[01])\.(0[1-9]|1[0-2])\.(19|20)\d{2}$'
         if not re.match(vzorec, datum):
-            return False, "Nesprávný formát data (použijte DD.MM.YYYY)"
-        try:
-            day, month, year = map(int, datum.split('.'))
-            datetime(year, month, day)
-        
-            current_year = datetime.now().year
-            if year > current_year:
-                return False
-            if year < current_year - 150:
-                return False
-            return True
-        
-        except ValueError:
             return False
+        elif re.match(vzorec, datum):
+            return True
+        else:
+            raise ValueError
 
     @classmethod
     def zvaliduj_tel_cislo(self, tel_cislo):

@@ -6,7 +6,7 @@ class Vypisovac:
 
     @classmethod
     def vypis_spatne_datum_narozeni(cls):
-        print("\nŠpatně zadaný věk!")
+        print("\nŠpatně zadané datum!")
 
     @classmethod
     def vypis_spatne_tel_cislo(cls):
