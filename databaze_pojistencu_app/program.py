@@ -10,7 +10,7 @@ def zadej_jmeno(rozhrani):
     je_jmeno_validni = Kontrolor.zvaliduj_jmeno_nebo_prijmeni(jmeno)
     if not je_jmeno_validni:
         Vypisovac.vypis_spatne_jmeno_nebo_prijmeni("jmeno")
-        zadej_jmeno(rozhrani)
+        return zadej_jmeno(rozhrani)
     else:
         return jmeno
 
@@ -19,25 +19,25 @@ def zadej_prijmeni(rozhrani):
     je_prijmeni_validni = Kontrolor.zvaliduj_jmeno_nebo_prijmeni(prijmeni)
     if not je_prijmeni_validni:
         Vypisovac.vypis_spatne_jmeno_nebo_prijmeni("příjmení")
-        zadej_prijmeni(rozhrani)
+        return zadej_prijmeni(rozhrani)
     else:
         return prijmeni
 
 def zadej_datum_narozeni(rozhrani):
-    vek = (rozhrani.vrat_datum_narozeni())
-    je_datum_narozeni_validni = Kontrolor.zvaliduj_vek(vek)
+    datum = (rozhrani.vrat_datum_narozeni())
+    je_datum_narozeni_validni = Kontrolor.zvaliduj_datum_narození(datum)
     if not je_datum_narozeni_validni:
         Vypisovac.vypis_spatne_datum_narozeni()
-        zadej_datum_narozeni(rozhrani)
+        return zadej_datum_narozeni(rozhrani)
     else:
-        return vek
+        return datum
 
 def zadej_tel_cislo(rozhrani):
     tel_cislo = rozhrani.vrat_telefonni_cislo()
     je_tel_cislo_validni = Kontrolor.zvaliduj_tel_cislo(tel_cislo)
     if not je_tel_cislo_validni:
         Vypisovac.vypis_spatne_tel_cislo()
-        zadej_tel_cislo(rozhrani)
+        return zadej_tel_cislo(rozhrani)
     else:
         return tel_cislo
 
@@ -81,7 +81,7 @@ def main():
             Vypisovac.vypis_pokracovani()
             pokracovani = input()
         case "5":
-            os.close()
+            exit()
 
     if pokracovani == "":
         main()
