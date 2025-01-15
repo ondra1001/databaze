@@ -42,7 +42,7 @@ def zadej_tel_cislo(rozhrani):
         return tel_cislo
 
 
-def program():
+def main():
 
     manager_pojistencu = ManagerDbPojistencu("databaze_pojistencu.db")
 
@@ -84,7 +84,7 @@ def program():
             os.close()
 
     if pokracovani == "":
-        program()
+        main()
 
 
 
